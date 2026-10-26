@@ -102,6 +102,39 @@ To view the generated test IDs without running the tests:
 python -m pytest --collect-only -q
 ```
 
+## Mock Objects lab
+
+The `Lab_Mock_Objects` directory demonstrates Python's `unittest.mock.Mock`
+with six focused exercises:
+
+1. **Basic mock objects** - shows that undefined methods can be called and
+   return another `Mock`. The experiments use different method names and
+   arguments to demonstrate this behavior.
+2. **`return_value`** - configures a fixed response. The experiments change
+   the response, call it repeatedly, and show that the returned value can be
+   any data type.
+3. **Exception `side_effect`** - configures a mock to raise an exception. The
+   experiments change the exception type, update `pytest.raises`, and observe
+   the failure when the exception is not handled.
+4. **List `side_effect`** - returns one value per call. The experiments show
+   `StopIteration` after the list is exhausted, test lists of different
+   lengths, and compare the behavior with `return_value`.
+5. **Function `side_effect`** - runs custom logic for each call. The
+   experiments change the calculation and compare it with a fixed
+   `return_value`, showing how input-dependent behavior can be lost.
+6. **Comparing `return_value` and `side_effect`** - contrasts a static result,
+   changing list responses, raised exceptions, and function-based responses.
+
+Run this lab from its own directory:
+
+```powershell
+Set-Location Lab_Mock_Objects
+python -m pytest -v
+```
+
+The completed lab should report **6 passed**. Use `-s` when running an
+experiment that includes `print()` output.
+
 ## Running the tests
 
 Run each lab from its own directory. For example:
